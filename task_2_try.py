@@ -22,6 +22,15 @@ print(new_text)
 #или
 text = [i.lower() for i in text]
 print(text)
+
+#выполнить light с условием: в пункте 2 дополнительно к приведению к нижнему регистру выполнить лемматизацию.
+import pymorphy2
+morph = pymorphy2.MorphAnalyzer()
+text_lemmatization = []
+for i in text:
+    text_lemmatization.append(morph.parse(i)[0].normal_form)
+print(text_lemmatization)
+
 # получить из list пункта 3 dict, ключами которого являются слова, а значениями их количество появлений в тексте
 
 counter_repeat ={}
@@ -35,11 +44,6 @@ counter_repeat = list(counter_repeat.items())
 counter_repeat.sort(key=lambda kv: kv[1], reverse=True)
 print(counter_repeat[:5])
 
-#выполнить light с условием: в пункте 2 дополнительно к приведению к нижнему регистру выполнить лемматизацию.
-import pymorphy2
-morph = pymorphy2.MorphAnalyzer()
-text_lemmatization = []
-for i in text:
-    text_lemmatization.append(morph.parse(i)[0].normal_form)
-print(text_lemmatization)
+
+
 
