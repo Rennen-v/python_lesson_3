@@ -35,6 +35,7 @@ counter_repeat = list(counter_repeat.items())
 counter_repeat.sort(key=lambda kv: kv[1], reverse=True)
 print(counter_repeat[:5])
 
+#выполнить light с условием: в пункте 2 дополнительно к приведению к нижнему регистру выполнить лемматизацию.
 import pymorphy2
 morph = pymorphy2.MorphAnalyzer()
 text_lemmatization = []
